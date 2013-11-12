@@ -1,6 +1,6 @@
 <h1>Edit Picture</h1>
 
-<form action="http://localhost:3000/update_picture/<%= params[:id] %>">
+<%= form_tag("http://localhost:3000/update_picture/#{params[:id]}", :method => "patch") do %>
   <div>
     <label for="the_caption">Caption:</label>
     <input id="the_caption" type="text" name="caption" value="<%= @picture.caption %>">
@@ -13,5 +13,6 @@
     <input type="submit" value="Update Picture">
   </div>
   <div>
-    <a href="/all_pictures"> Return to the picture collection.</a>
-</form>
+
+    <%= link_to("Return to Collection", "http://localhost:3000/all_pictures") %>
+<% end %>

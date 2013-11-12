@@ -1,11 +1,13 @@
 <h1>Picture Details </h1>
 
 <p>
-<img height = 100 src= "<%= @picture.source %>">
+	<%= image_tag(@picture.source, :height => 100) %>
 </p>
 
 <p><%= @picture.caption %></p>
 
-<p><a href="http://localhost:3000/edit_picture_form/<%= @picture.id %>">Edit this picture</a></p>
-<p><a href="http://localhost:3000/delete_picture/<%= @picture.id %>">Delete this picture</a></p>
-<p> <a href="/all_pictures"> Return to the picture collection.</a></p>
+<p><%= link_to("Edit this picture", "http://localhost:3000/edit_picture_form/#{@picture.id}") %></p>
+
+<p><%= link_to("Delete this picture", "http://localhost:3000/delete_picture/#{@picture.id}") %></p>
+
+<p><%= link_to("Return to Collection", "http://localhost:3000/all_pictures") %></p>
