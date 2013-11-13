@@ -6,8 +6,8 @@
 
 <p><%= @picture.caption %></p>
 
-<p><%= link_to("Edit this picture", "http://localhost:3000/edit_picture_form/#{@picture.id}") %></p>
+<p><%= link_to("Edit this picture", edit_picture_url(@picture.id)) %></p>
 
-<p><%= link_to("Delete this picture", "http://localhost:3000/delete_picture/#{@picture.id}") %></p>
+<p><%= link_to("Delete this picture", delete_picture_url(@picture.id), :method => "delete") %></p>
 
-<p><%= link_to("Return to Collection", "http://localhost:3000/all_pictures") %></p>
+<p><%= link_to("Return to Collection", pictures_url) %></p>
